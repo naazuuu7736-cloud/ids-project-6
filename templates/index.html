@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intrusion Detection System</title>
+</head>
+<body>
+
+<h1>Intrusion Detection System</h1>
+
+<form action="/predict" method="post">
+
+    <!-- 41 Features -->
+    {% for i in range(1, 42) %}
+        <label>Feature {{i}}:</label>
+        <input type="text" name="feature{{i}}" value="0" required>
+
+        <br><br>
+    {% endfor %}
+
+    <!-- Predict Button -->
+    <input type="submit" value="Predict">
+
+</form>
+
+{% if prediction %}
+    <h2>Result: {{prediction}}</h2>
+{% endif %}
+
+</body>
+</html>
